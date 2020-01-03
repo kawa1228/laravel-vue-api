@@ -1,5 +1,11 @@
 http://127.0.0.1:10080/
 
+## env
+Cross-Origin Resource Sharing
+```
+APP_URL=http://localhost:8888/
+```
+
 # docker-laravel
 
 Build Laravel's development environment using docker.
