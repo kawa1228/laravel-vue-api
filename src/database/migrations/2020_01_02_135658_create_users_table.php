@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\User;
+use App\Models\User;
 
 class CreateUsersTable extends Migration
 {
@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->comment('名前');
             $table->string('employee_id')->comment('社員ID')->nullable();
-            $table->integer('status')->comment('ステータス')->default(User::STATUS_VALID);
+            $table->integer('status')->comment('ステータス')->default(0);
             $table->integer('team_id')->comment('チームID')->nullable();
 
             $table->string('google_user_id')->comment('GoogleユーザーID')->nullable();
