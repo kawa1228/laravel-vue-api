@@ -13,12 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-/*
-|api/user にget でアクセスした場合、apiの中のauthミドルウェアを実行し、
-|function の中身を実行して返す
-|Route::middleware('auth:api')->get('/user', function (Request $request) {
-|    return $request->user();
-|});
-*/
+Route::middleware(['cors'])->group( function() {
+    Route::options('user', function () {
+        return response()->json();
+    });
 
-Route::get('/user', "API\UserController@index");
+    Route::get('/user', "API\UserController@index");
+});
